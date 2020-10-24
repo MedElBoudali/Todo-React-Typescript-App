@@ -25,7 +25,8 @@ const TodoList: React.FC<TodoListProps> = ({ items, deleteItem }) => {
 };
 
 TodoList.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  deleteItem: PropTypes.func.isRequired
 };
 
 export default TodoList;
