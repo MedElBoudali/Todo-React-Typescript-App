@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoList: React.FC = props => {
-  const todos = [{ id: 't1', text: 'Finish the cource' }];
+interface TodoListProps {
+  items: { id: string; text: string }[];
+}
+
+const TodoList: React.FC<TodoListProps> = ({ items }) => {
   return (
     <ul>
-      {todos.map(todo => (
-        <li>{todo.text}</li>
+      {items.map(item => (
+        <li key={item.id}>{item.text}</li>
       ))}
     </ul>
   );
 };
 
-TodoList.propTypes = {};
+TodoList.propTypes = {
+  items: PropTypes.array.isRequired
+};
 
 export default TodoList;
